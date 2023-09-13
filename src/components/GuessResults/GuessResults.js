@@ -1,11 +1,13 @@
 import React from "react";
 import Guess from "../Guess";
+import { range } from "../../utils";
 
-function GuessResults({ guesses, maxGuesses }) {
+function GuessResults({ guesses, answer, maxGuesses }) {
+  console.log({ guesses });
   return (
     <div className="guess-results">
-      {guesses.map((guess) => {
-        return <Guess key={crypto.randomUUID()} guess={guess} />;
+      {range(maxGuesses).map((num) => {
+        return <Guess key={num} value={guesses[num]} answer={answer} />;
       })}
     </div>
   );

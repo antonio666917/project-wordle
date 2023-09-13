@@ -39,7 +39,8 @@ function GuessInput({ guesses, handleSubmitGuess }) {
         onChange={handleChange}
         maxLength={5}
         minLength={5}
-        pattern={`^.{5}$`}
+        pattern={`[a-zA-Z]{5}`}
+        title="5 letter word"
       />
     </form>
   );
